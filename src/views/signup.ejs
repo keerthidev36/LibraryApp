@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>SignUp</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4c52b3c572.js" crossorigin="anonymous"></script> 
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+   <link rel="stylesheet" href="css/signup.css">
+		<link href="css/styles.css" rel="stylesheet">
+   
+	</head>
+    <body>
+	<!-- <body style="background-image: url(images/back.jpg);background-repeat:no-repeat; background-size: cover;"> -->
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+      <%}%>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <div class="signup">
+    <h2>NEW ACCOUNT</h2>
+    <form  class="form-strength" action="/login" onsubmit="return !! (validate() & check()) ; ">
+         <input type="text" placeholder="Username" required  id="username" oninput="return validate();">
+         <label for="error" id="error2"></label>
+          <input type="text" placeholder="Phone Number" required id="phnumber" oninput="return validate() ;">
+           <label for="error" id="error1"></label>
+           
+      <input type="text" placeholder="Email" required id="email" oninput="return validate() ;">
+      <label for="error" id="error"></label>
+    
+      <input type="password" class="password" placeholder="Password" required id="pwd" oninput= "return check() ;">
+
+      <small class="password-strength__error text-danger js-hidden">This symbol is not allowed!</small><small  style="color: black;"class="form-text text-muted mt-2" id="passwordHelp"><b>Add Minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number to make the password really strong!</b></small>
+                <div class="password-strength__bar-block progress mb-4">
+                <div class="password-strength__bar progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+    
+      <input type="password" placeholder="Confirmation Password" required id="cmpwd" oninput="return validate() ;">
+      <label for="error" id="error4"></label>
+    
+      
+
+      <div class="field " >
+        
+        <input type="submit" value="Submit">
+      </a>
+      
+     </div> 
+     
+
+    </form>
+
+  </div>
+<script src="JS/signup.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js'></script> 
+
+  <!--sigup form end-->
+  <div class="container" id="footer">
+    <div class="row">
+      <div class="col col-sm-12">
+        
+        <h1>Follow Us</h1>
+        <div class="btn-group">
+         <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+       <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+       <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <hr>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <ul class="list-inline">
+              <li><i class="icon-facebook icon-2x"></i></li>
+              <li><i class="icon-twitter icon-2x"></i></li>
+              <li><i class="icon-google-plus icon-2x"></i></li>
+              <li><i class="icon-pinterest icon-2x"></i></li>
+            </ul>
+            
+          </div>
+          <div class="col-sm-6">
+              <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+          </div>
+        </div>
+      </div>
+    </footer> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
