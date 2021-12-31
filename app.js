@@ -56,4 +56,4 @@ app.get('/',function(req,res){
       });
 });
 
-app.listen(5070);
+app.listen(process.env.PORT || 5070);
