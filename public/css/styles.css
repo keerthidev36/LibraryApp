@@ -53,6 +53,7 @@ footer {
 }
 #topPanel .panel-body {
   padding-top:0px;
+  color: #000022;
 }
 
 .navbar.affix {
@@ -120,6 +121,7 @@ a,a:hover {
   border-color:transparent;
   border-radius:20px;
   border: 3px solid #0c0666;
+  width: 1090px;
 
   
 }
