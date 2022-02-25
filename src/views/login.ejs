@@ -52,20 +52,21 @@
 </header>
      <div class="content" >
   <header>  Login</header>
-  <form  class="form-strength" id="form" action="/"  method="get" >
+  <form  class="form-strength" id="form" action="/login/new"  onsubmit="return validate()" method="post" >
      <div class="field">
          <span class="fa fa-user"></span>
-           <input type="text" placeholder="USERNAME" id="uname" required >
+           <input type="email" placeholder="Email" id="email" name="email" required >
 
       </div>
            <label for="error" id="error"></label>
       <div class="field space">
          <span class="fa fa-lock"></span>
-         <input type="password"  placeholder="PASSWORD" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
-      </div>
+         <!-- <input type="password"  placeholder="PASSWORD" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required > -->
+         <input type="password"  placeholder="PASSWORD" id="pwd" name="pwd"  required >
+        </div>
       <label for="error" id="error1"></label>
       
-          <button class="loginbutton" id="loginBtn">Login</button> 
+          <button class="loginbutton" type="submit"   id="loginBtn">Login</button> 
       
       
       

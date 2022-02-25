@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>ADD BOOK</title>
+		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>ADD BOOK
+        <h1><%=title%>
           <p class="lead"></p>
         </h1>
       </div>
@@ -90,25 +90,37 @@
           
           
           <!--/stories-->
+          <%for(i=0;i<books.length;i++){%>
           <div class="row">    
-            <form method="POST" action="/admin/add">
-              <div class="form-group row"><div class="col-sm-1"> Title:</div><input class="col-sm-3" type="text" name="title" required></div>
-                   <div class="form-group row">  <div class="col-sm-1"> Author:</div><input class="col-sm-3" type="text" name="author" required></div>
-                   <div class="form-group row"> <div class="col-sm-1">Genre:</div> <input class="col-sm-3"  type="text" name="genre" required></div>
-                   <div class="form-group row">
-                   <div class="col-sm-1">Image:</div> <input  type="file" name="image" accept="image/*"></div>
-              
-                <button type="submit">ADD BOOK</button>
-
-            </form>
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-title" href="#"><img alt="" src="/images/<%=books[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3><%=books[i].title%></h3>
+              <a class="btn btn-primary pull-right" data-toggle="tooltip" data-placement="bottom" style="margin-right: 20px;"  href="/books/update/<%=books[i]._id%>" role="button" ><i class="icon-edit">Edit</a></i>
+              <a class="btn btn-danger pull-right" data-toggle="tooltip" data-placement="bottom"  style="margin-right: 14px;"  href="/books/delete/<%=books[i]._id%>" role="button" onclick="return confirm('Are you sure to delete this book?');"><i class="icon-trash" >Delete</i></a>
+              <!-- <a class="btn btn-primary pull-right" data-toggle="tooltip" data-placement="bottom" style="margin-right: 20px;"  href="/update/<%=books[i]._id%>" role="button" ><i class="icon-edit">Edit</a></i>
+              <a class="btn btn-danger pull-right" data-toggle="tooltip" data-placement="bottom"  style="margin-right: 14px;"  href="/books/delete/<%=books[i]._id%>" role="button" onclick="return confirm('Are you sure to delete this book?');"><i class="icon-trash" >Delete</i></a> -->
+              <div class="row">
+                <div class="col-xs-9">
+                  <h4><span class="label label-default"><%=books[i].author%></span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> 
+                    <a href="/books/<%=books[i]._id%>" class="text-muted">Read More</a></small>
+                  </h4></div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
           </div>
+          <%}%>
           <hr>
           
           
           <!--/stories-->
           
           
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
+          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
         
           
         </div>
