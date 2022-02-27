@@ -2,7 +2,7 @@
 const  mongoose  =require('mongoose');
 //Database connection
 //  mongoose.connect('mongodb://localhost:27017/library');
-mongoose.connect('mongodb//localhost:27017/library');
+mongoose.connect('mongodb+srv://localhost:27017/library?retryWrites=true&w=majority');
 //schema definition
 const Schema = mongoose.Schema;
 const BookSchema =new Schema({
