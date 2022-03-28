@@ -2,7 +2,7 @@
 const  mongoose  =require('mongoose');
 //Database connection
 //  mongoose.connect('mongodb://localhost:27017/library');
-mongoose.connect('mongodb+srv://userone:userone@ictakfiles.5ffz0.mongodb.net/library?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://userone:userone@ictakfiles.5ffz0.mongodb.net/libraryDb?retryWrites=true&w=majority');
 //schema definition
 const Schema = mongoose.Schema;
 const BookSchema =new Schema({
@@ -12,7 +12,7 @@ const BookSchema =new Schema({
     image:String
 });
 //model creation
-var Bookdata= mongoose.model('bookdata',BookSchema); 
+var Bookdata= mongoose.model('book',BookSchema); 
 module.exports = Bookdata;
 
 
